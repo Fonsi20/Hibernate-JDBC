@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="objetos.Autores" table="autores">
+        <id name="dniAutor" column="dniAutor"/>
+        <property name="nombre" column="nombre" />
+        <property name="nacionalidad" column="nacionalidad" />
+        <set name="libro" table="libros" inverse="true">
+            <key>
+                <column name="idLibro" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Autores"/>
+        </set>    
+         <one-to-one name="numerotlf" class="objetos.Telefonos" constrained="false"/>   
+    </class>
+</hibernate-mapping>

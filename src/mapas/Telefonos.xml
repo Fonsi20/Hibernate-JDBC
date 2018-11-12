@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="objetos.Telefonos" table="telefonos">
+        <id name="dniAutor" column="dniAutor"/>
+        <property name="numerotlf" column="numerotlf"/>
+        <one-to-one name="autor" class="objetos.Autores" cascade="save-update" constrained="true"/>
+    </class>    
+</hibernate-mapping>
